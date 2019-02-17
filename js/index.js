@@ -9,7 +9,7 @@
 // }
 
 //function mouseOut() {
-  //document.getElementByTagName("h1").style.color = "black";
+//document.getElementByTagName("h1").style.color = "black";
 //}
 
 // Mouseover
@@ -17,25 +17,70 @@
 const logoHeader = document.querySelector("h1");
 console.log(logoHeader);
 
-logoHeader.addEventListener('mouseover', function(event) {
-    document.querySelector("h1").style.color = "red";
+logoHeader.addEventListener('mouseover', function (event) {
+  document.querySelector("h1").style.color = "red";
   //event.stopPropagation();
 })
 
 // Mouseover with Mouseout
 
-
-logoHeader.addEventListener('mouseout', function(event) {
-    document.querySelector("h1").style.color = "black";
-  //event.stopPropagation();
+let cat = document.querySelector(".home");
+console.log(cat);
+cat.addEventListener("mouseover", function (event) {
+  document.querySelector(".home").style.color = "purple";
+  cat.addEventListener("mouseout", function (event) {
+    document.querySelector(".home").style.color = "black";
+  })
 })
 
 
+// logoHeader.addEventListener('mouseout', function(event) {
+//     document.querySelector("h1").style.color = "black";
+//   //event.stopPropagation();
+// })
+
+// document.querySelector(".home").addEventListener("mouseover", mouseOver);
+// document.querySelector(".home").addEventListener("mouseout", mouseOut);
+
+//  function mouseOver() {
+//    document.querySelector(".home").style.color = "purple";
+//  }
+
+// function mouseOut() {
+//   document.querySelector(".home").style.color = "black";
+// }
+
+// Dblclick
+
+let pics = document.querySelectorAll('.container img');
+
+pics.forEach(content => {
+  content.addEventListener('dblclick', function (event) {
+    console.log('double click');
+
+    event.target.style.width = '20%';
+  })
+})
+
+// Mouseleave
+
+let navs = document.querySelector('nav a');
+navs.addEventListener('mouseleave', () => {
+  event.target.style.width = '100%';
+  event.target.style.width = '50%';
+})
+
+// Click
+
+let navHome = document.querySelector('nav a');
+navHome.addEventListener('click', () => {
+  event.target.style.backgroundColor = 'yellow';
+})
 
 // Keydown
 
 const keysdown = document.querySelector('.text-content h2');
-keysdown.addEventListener('keydown', function(event) {
+keysdown.addEventListener('keydown', function (event) {
   console.log(`This is a keydown: ${event.code}`)
 })
 
@@ -44,74 +89,47 @@ keysdown.addEventListener('keydown', function(event) {
 const wheels = document.querySelector('.intro h2');
 console.log(wheels);
 
-wheels.addEventListener('wheel', function(event) {
+wheels.addEventListener('wheel', function (event) {
   console.log(`This is a wheel`)
 })
 
 // Load
 
-var script = document.createElement("script");
-  script.addEventListener("load", function(event) {
-    console.log("Script finished loading and executing");
-  });
-  script.src = "https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js";
-  script.async = true;
-  document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+const script = document.createElement("script");
+script.addEventListener("load", function (event) {
+  console.log("Script finished loading and executing");
+});
+script.src = "https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js";
+script.async = true;
+document.getElementsByTagName("script")[0].parentNode.appendChild(script);
 
-// // Focus
+// Click
 
-//   a:focus, a:active {
-//     color: green;
-//   }
-  
-//   <a id="myAnchor" href="https://www.w3schools.com">Visit W3Schools.com</a>
-  
-//   <p>Click the buttons to give focus and/or remove focus from the link above.</p>
-  
-//  // <input type="button" onclick="getfocus()" value="Get focus">
-//   //<input type="button" onclick="losefocus()" value="Lose focus">
-  
+document.querySelector('h1');
+logoHeader.addEventListener('click', () => {
+  event.target.style.fontSize = '1000%';
+})
 
-//   function getfocus() {
-//     document.getElementById("myAnchor").focus();
-//   }
-  
-//   function losefocus() {
-//     document.getElementById("myAnchor").blur();
-//   }
+// Scroll
 
-// // Resize
+const upDown = document.querySelector('.home');
+upDown.addEventListener('wheel', function (event) {
+  event.currentTarget.style.color = "blue";
+  console.log('srolling up and down');
+});
 
-//   function quarter() {
-//     window.resizeTo(
-//       window.screen.availWidth,
-//       window.screen.availHeight
-//     );
-//   }
-// console.log('What?');
+//Dblclick
 
-// // Scroll
+const buttons = document.querySelectorAll(".btn");
+buttons.forEach(content => {
+  content.addEventListener('dblclick', function (event) {
+    console.log("select all");
+    event.target.style.color = "blue";
+    event.preventDefault();
+  })
+})
 
-// const upDown = document.querySelector('.home');
-// upDown.addEventListener('wheel', function(event) {
-// event.currentTarget.style.color = "brown";
-//   console.log('srolling up and down');
 
-// // Select
-
-// selects.addEventListener('select', function(event) {
-    
-//   })
-
-//   //Dblclick
-
-//   const buttons = document.querySelectorAll(".btn");
-// buttons.forEach(content => {
-//   content.addEventListener('dblclick', function(event) {
-//   console.log("select all");
-//   event.target.style.color = "blue";
-//   })
-// })
 
 // Testing out different things
 
