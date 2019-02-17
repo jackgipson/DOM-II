@@ -75,6 +75,7 @@ navs.addEventListener('mouseleave', () => {
 let navHome = document.querySelector('nav a');
 navHome.addEventListener('click', () => {
   event.target.style.backgroundColor = 'yellow';
+  event.preventDefault();
 })
 
 // Keydown
